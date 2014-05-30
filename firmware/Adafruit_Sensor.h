@@ -16,6 +16,8 @@
 
 /* Update by K. Townsend (Adafruit Industries) for lighter typedefs, and
  * extended sensor support to include color, voltage and current */
+
+/* Ported by Garrett Bartley to work with the Spark Core (http://spark.io) */
  
 #ifndef _ADAFRUIT_SENSOR_H
 #define _ADAFRUIT_SENSOR_H
