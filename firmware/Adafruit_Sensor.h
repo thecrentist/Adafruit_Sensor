@@ -20,12 +20,7 @@
 #ifndef _ADAFRUIT_SENSOR_H
 #define _ADAFRUIT_SENSOR_H
 
-#if ARDUINO >= 100
- #include "Arduino.h"
- #include "Print.h"
-#else
- #include "WProgram.h"
-#endif
+#include "application.h"
 
 /* Intentionally modeled after sensors.h in the Android API:
  * https://github.com/android/platform_hardware_libhardware/blob/master/include/hardware/sensors.h */
@@ -44,21 +39,21 @@
 /** Sensor types */
 typedef enum
 {
-  SENSOR_TYPE_ACCELEROMETER         = (1),   /**< Gravity + linear acceleration */
-  SENSOR_TYPE_MAGNETIC_FIELD        = (2),
-  SENSOR_TYPE_ORIENTATION           = (3),
-  SENSOR_TYPE_GYROSCOPE             = (4),
-  SENSOR_TYPE_LIGHT                 = (5),
-  SENSOR_TYPE_PRESSURE              = (6),
-  SENSOR_TYPE_PROXIMITY             = (8),
-  SENSOR_TYPE_GRAVITY               = (9),
-  SENSOR_TYPE_LINEAR_ACCELERATION   = (10),  /**< Acceleration not including gravity */
-  SENSOR_TYPE_ROTATION_VECTOR       = (11),
-  SENSOR_TYPE_RELATIVE_HUMIDITY     = (12),
-  SENSOR_TYPE_AMBIENT_TEMPERATURE   = (13),
-  SENSOR_TYPE_VOLTAGE               = (15),
-  SENSOR_TYPE_CURRENT               = (16),
-  SENSOR_TYPE_COLOR                 = (17)
+    SENSOR_TYPE_ACCELEROMETER         = (1),   /**< Gravity + linear acceleration */
+    SENSOR_TYPE_MAGNETIC_FIELD        = (2),
+    SENSOR_TYPE_ORIENTATION           = (3),
+    SENSOR_TYPE_GYROSCOPE             = (4),
+    SENSOR_TYPE_LIGHT                 = (5),
+    SENSOR_TYPE_PRESSURE              = (6),
+    SENSOR_TYPE_PROXIMITY             = (8),
+    SENSOR_TYPE_GRAVITY               = (9),
+    SENSOR_TYPE_LINEAR_ACCELERATION   = (10),  /**< Acceleration not including gravity */
+    SENSOR_TYPE_ROTATION_VECTOR       = (11),
+    SENSOR_TYPE_RELATIVE_HUMIDITY     = (12),
+    SENSOR_TYPE_AMBIENT_TEMPERATURE   = (13),
+    SENSOR_TYPE_VOLTAGE               = (15),
+    SENSOR_TYPE_CURRENT               = (16),
+    SENSOR_TYPE_COLOR                 = (17)
 } sensors_type_t;
 
 /** struct sensors_vec_s is used to return a vector in a common format. */
@@ -72,9 +67,9 @@ typedef struct {
         };
         /* Orientation sensors */
         struct {
-            float roll;    /**< Rotation around the longitudinal axis (the plane body, 'X axis'). Roll is positive and increasing when moving downward. -90°<=roll<=90° */
-            float pitch;   /**< Rotation around the lateral axis (the wing span, 'Y axis'). Pitch is positive and increasing when moving upwards. -180°<=pitch<=180°) */
-            float heading; /**< Angle between the longitudinal axis (the plane body) and magnetic north, measured clockwise when viewing from the top of the device. 0-359° */
+            float roll;    /**< Rotation around the longitudinal axis (the plane body, 'X axis'). Roll is positive and increasing when moving downward. -90ï¿½<=roll<=90ï¿½ */
+            float pitch;   /**< Rotation around the lateral axis (the wing span, 'Y axis'). Pitch is positive and increasing when moving upwards. -180ï¿½<=pitch<=180ï¿½) */
+            float heading; /**< Angle between the longitudinal axis (the plane body) and magnetic north, measured clockwise when viewing from the top of the device. 0-359ï¿½ */
         };
     };
     int8_t status;
@@ -137,17 +132,17 @@ typedef struct
 } sensor_t;
 
 class Adafruit_Sensor {
- public:
-  // Constructor(s)
-  void constructor();
-
-  // These must be defined by the subclass
-  virtual void enableAutoRange(bool enabled) {};
-  virtual void getEvent(sensors_event_t*);
-  virtual void getSensor(sensor_t*);
-  
- private:
-  bool _autoRange;
+    public:
+        // Constructor(s)
+        void constructor();
+        
+        // These must be defined by the subclass
+        virtual void enableAutoRange(bool enabled) {};
+        virtual void getEvent(sensors_event_t*);
+        virtual void getSensor(sensor_t*);
+    
+    private:
+        bool _autoRange;
 };
 
 #endif

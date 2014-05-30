@@ -1,0 +1,7 @@
+{
+	"name": "Adafruit_Sensor",
+	"author": "Garrett Bartley",
+	"version": "0.0.1",
+	"license": "Apache",
+	"description": "Adafruit's common sensor library"
+}
