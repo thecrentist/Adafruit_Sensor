@@ -1,7 +1,7 @@
 {
 	"name": "Adafruit_Sensor",
-	"author": "Garrett Bartley",
-	"version": "0.0.1",
+	"author": "Aaron Jimenez",
+	"version": "1.0.0",
 	"license": "Apache",
 	"description": "Adafruit's common sensor library"
 }
