@@ -1,5 +1,5 @@
 {
-	"name": "Adafruit_Sensor_Photon",
+	"name": "Adafruit_Sensor",
 	"author": "Aaron Jimenez",
 	"version": "1.0.3",
 	"license": "Apache",
