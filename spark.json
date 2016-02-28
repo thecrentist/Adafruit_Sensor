@@ -1,7 +1,7 @@
 {
 	"name": "Adafruit_Sensor_Photon",
 	"author": "Aaron Jimenez",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"license": "Apache",
 	"description": "Adafruit's common sensor library"
 }
